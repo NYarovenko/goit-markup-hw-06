@@ -474,7 +474,7 @@ svg {
 
 .footer .container {
   display: flex;
-  justify-content: space-between;
+  align-items: baseline;
 }
 
 .footer .logo {
@@ -514,6 +514,7 @@ svg {
 }
 
 .footer .titel {
+  font-weight: 700;
   font-size: 14px;
   line-height: calc(16 / 14);
   letter-spacing: 0.03em;
@@ -558,7 +559,7 @@ svg {
 }
 
 .footer .form-subscription {
-  margin-left: 93px;
+  margin-left: auto;
 }
 
 .footer .subscription {
@@ -577,6 +578,7 @@ svg {
   border-radius: 4px;
 }
 
+.footer .input-email,
 .footer .input-email::placeholder {
   font-size: 16px;
   line-height: calc(16 / 20);
@@ -586,6 +588,7 @@ svg {
   letter-spacing: 0.03em;
 
   color: rgba(255, 255, 255, 0.6);
+  outline: none;
 }
 
 .form-subscription .btn {
@@ -600,7 +603,7 @@ svg {
 
   font-weight: 700;
   font-size: 16px;
-  line-height: var(16/30);
+  line-height: calc(16 / 30);
 
   display: flex;
   align-items: center;
@@ -608,6 +611,7 @@ svg {
   letter-spacing: 0.06em;
 
   color: #ffffff;
+  cursor: pointer;
 }
 
 .form-subscription .icon-send {
@@ -769,7 +773,7 @@ section Портфоліо */
 .modal {
   position: absolute;
   width: 528px;
-  height: 581px;
+  /* height: 581px; */
 
   top: 50%;
   left: 50%;
@@ -802,7 +806,7 @@ section Портфоліо */
 
 .btn-close:hover,
 .btn-close:focus {
-  fill: #188ce8;
+  fill: var(--blue-activ-logo);
 }
 
 .modal .title {
@@ -813,7 +817,7 @@ section Портфоліо */
   letter-spacing: 0.03em;
   margin-bottom: 12px;
 
-  color: #212121;
+  color: var(--primary-color);
 }
 
 .form-field {
@@ -828,7 +832,7 @@ section Портфоліо */
   letter-spacing: 0.01em;
   margin-bottom: 4px;
 
-  color: #757575;
+  color: var(--description-text-color);
 }
 
 .input-field {
@@ -840,16 +844,26 @@ section Портфоліо */
   border-radius: 4px;
   height: 40px;
 
-  transition: border-color var(--transition-time) var(--transition-function),
-    fill var(--transition-time) var(--transition-function);
+  outline: none;
+
+  transition: border-color var(--transition-time) var(--transition-function);
 }
 
 .field-input {
   position: relative;
 }
 
+.backdrop .icon {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  transition: fill var(--transition-time) var(--transition-function);
+}
+
 .field-input:hover .input-field,
-.field-input:focus .input-field {
+.field-input:focus .input-field,
+.registration_form textarea:hover,
+.registration_form textarea:focus {
   border-color: var(--active-color);
 }
 
@@ -858,18 +872,14 @@ section Портфоліо */
   fill: var(--active-color);
 }
 
-.backdrop .icon {
-  position: absolute;
-  left: 12px;
-  top: 11px;
-}
-
 .registration_form textarea {
   resize: none;
   padding: 12px 16px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  outline: none;
 }
 
 .registration_form textarea::placeholder {
@@ -880,9 +890,12 @@ section Портфоліо */
   color: rgba(117, 117, 117, 0.5);
 }
 
+.div-textarea {
+  margin-bottom: 20px;
+}
+
 .registration_form .form-consent {
-  padding-top: var(--description-indentation);
-  padding-bottom: 30px;
+  margin-bottom: 30px;
 
   display: flex;
   align-items: center;
@@ -943,7 +956,6 @@ section Портфоліо */
 
   background-color: var(--active-color);
   border-radius: 4px;
-  border-color: var(--active-color);
 
   transition: box-shadow var(--transition-time) var(--transition-function);
 
@@ -958,9 +970,6 @@ section Портфоліо */
 
   letter-spacing: 0.06em;
   color: #ffffff;
-}
-
-.registration_form .btn:hover,
-.registration_form .btn:focus {
+  border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
