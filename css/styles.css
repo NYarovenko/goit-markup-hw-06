@@ -875,11 +875,15 @@ section Портфоліо */
 .registration_form textarea {
   resize: none;
   padding: 12px 16px;
-
-  border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-
   outline: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  transition: border var(--transition-time) var(--transition-function);
+}
+
+.registration_form textarea:hover,
+.registration_form textarea:focus {
+  border: 1px solid var(--active-color);
 }
 
 .registration_form textarea::placeholder {
@@ -957,8 +961,6 @@ section Портфоліо */
   background-color: var(--active-color);
   border-radius: 4px;
 
-  transition: box-shadow var(--transition-time) var(--transition-function);
-
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -971,5 +973,10 @@ section Портфоліо */
   letter-spacing: 0.06em;
   color: #ffffff;
   border: none;
+  transition: box-shadow var(--transition-time) var(--transition-function);
+}
+
+.registration_form .btn:hover,
+.registration_form .btn:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
